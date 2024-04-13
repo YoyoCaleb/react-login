@@ -1,16 +1,3 @@
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.emailForm {
-  display: flex;
-  flex-direction: column;
-}
-
-input,
-textarea {
-  margin: 10px 0px;
+App-header {
+  color: white;
 }

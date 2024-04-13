@@ -14,6 +14,7 @@ const EmailForm = () => {
     // Create a new object that contains dynamic template params
     const templateParams = {
       randomnumber: generateRandomNumber(),
+      send_to: "calebrnguyen@gmail.com",
     };
 
     function generateRandomNumber() {
@@ -30,8 +31,10 @@ const EmailForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="emailForm">
-      <button type="submit">Send Email</button>
+    <form onSubmit={handleSubmit}>
+      <button type="submit" class="emailForm">
+        Send Email
+      </button>
     </form>
   );
 };

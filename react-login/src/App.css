@@ -1,3 +1,6 @@
-App-header {
-  color: white;
+.App-header {
+  display: flex;
+}
+.hey {
+  font-size: 25px;
 }

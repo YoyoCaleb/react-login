@@ -1,35 +1,24 @@
-import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-
-import Register from "./components/register";
-import Login from "./components/login";
+// App.js
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import RegisterForm from "./components/RegisterForm";
+import Login from "./components/Login";
 import Success from "./components/success";
+import { FormDataProvider } from "./FormDataContext"; // Import FormDataProvider
+
 function App() {
   return (
-    <>
-      {/* This is the alias of BrowserRouter i.e. Router */}
-      <Router>
+    <Router>
+      <FormDataProvider>
+        {" "}
+        {/* Wrap App with FormDataProvider */}
         <Routes>
-          {/* This route is for home component 
-          with exact path "/", in component props 
-          we passes the imported component*/}
-          <Route exact path="/" element={<Register />} />
+          <Route path="/" element={<RegisterForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/success" element={<Success />} />
-
-          {/* If any route mismatches the upper 
-          route endpoints then, redirect triggers 
-          and redirects app to home component with to="/" */}
-          {/* <Redirect to="/" /> */}
-          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </Router>
-    </>
+      </FormDataProvider>
+    </Router>
   );
 }
 

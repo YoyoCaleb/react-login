@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
 
 const send2fa = (sento) => {
-  // Your EmailJS service ID, template ID, and Public Key
+  // EmailJS service ID, template ID, and Public Key
   const serviceId = "service_u17g2mm";
   const templateId = "template_19rjfp9";
   const publicKey = "DpTbUhjJ5CiC9YQLc";
@@ -11,7 +11,7 @@ const send2fa = (sento) => {
     Math.random() * (9999999999 - 1000000000) + 1000000000
   );
 
-  // Create a new object that contains dynamic template params
+  // Assign values to the the template parameters
   const templateParams = {
     randomnumber: randomnumber,
     sendto: sento,
@@ -27,7 +27,7 @@ const send2fa = (sento) => {
       console.error("Error sending email:", error);
     });
 
-  // Return the generated random number
+  // Return the random number
   return randomnumber;
 };
 

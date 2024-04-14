@@ -1,16 +1,15 @@
-// Login.jsx
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useFormData } from "../FormDataContext"; // Import useFormData hook
+import { useFormData } from "../FormDataContext";
 import Send2FA from "../Send2FA";
 
 export default function Login() {
   const [ranNum, setRanNum] = useState(null);
   useEffect(() => {
-    // Call the send2fa function when the component mounts
-    const email = formData.email; // Get email from formData
-    const num = Send2FA(email); // Pass email as parameter to Send2FA
+    // sends the inputed email into the Send2FA function to send the email
+    const email = formData.email;
+    const num = Send2FA(email);
     setRanNum(num);
   }, []);
 
@@ -20,7 +19,7 @@ export default function Login() {
     e2fa: "",
   });
   const [error, setError] = useState(null);
-  const { formData } = useFormData(); // Retrieve formData using useFormData hook
+  const { formData } = useFormData();
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -37,7 +36,7 @@ export default function Login() {
     // Retrieve form data
     const { username, password } = formData;
 
-    // Validate against form data
+    // Check for the correct user/pass. Then 2FA
     if (
       credentials.username === username &&
       credentials.password === password

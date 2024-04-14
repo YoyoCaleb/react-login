@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 
-const send2fa = () => {
+const send2fa = (sento) => {
   // Your EmailJS service ID, template ID, and Public Key
   const serviceId = "service_u17g2mm";
   const templateId = "template_19rjfp9";
@@ -14,7 +14,7 @@ const send2fa = () => {
   // Create a new object that contains dynamic template params
   const templateParams = {
     randomnumber: randomnumber,
-    sendto: "calebrnguyen@gmail.com",
+    sendto: sento,
   };
 
   // Send the email using EmailJS

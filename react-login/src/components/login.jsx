@@ -9,7 +9,8 @@ export default function Login() {
   const [ranNum, setRanNum] = useState(null);
   useEffect(() => {
     // Call the send2fa function when the component mounts
-    const num = Send2FA();
+    const email = formData.email; // Get email from formData
+    const num = Send2FA(email); // Pass email as parameter to Send2FA
     setRanNum(num);
   }, []);
 
